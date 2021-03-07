@@ -1,5 +1,4 @@
-import os
-import sys
+from os import system
 
 matriz = [[1, 2, 3],
           [4, 5, 6],
@@ -41,9 +40,17 @@ def dinamica():
         for x, row in enumerate(matriz):
             for y, element in enumerate(row):
                 if element == seleccionX:
-                    matriz[x][y] = 'X'
+                    matriz[x][y] = 'X' 
 
+        system('clear')
         matriz_creador(matriz)
+
+        if type(matriz[0][0]) == str and type(matriz[0][1]) == str and type(matriz[0][2]) == str:
+            if type(matriz[1][0]) == str and type(matriz[1][1]) == str and type(matriz[1][2]) == str:
+                if type(matriz[2][0]) == str and type(matriz[2][1]) == str and type(matriz[2][2]) == str:
+                    print('Juego empatado!')
+                    break
+
         matrizPlana = [x for i in matriz for x in i]
 
         if matrizPlana[0] == 'X' and matrizPlana[1] == 'X' and matrizPlana[2] == 'X':
@@ -79,6 +86,7 @@ def dinamica():
                 if element == seleccionO:
                     matriz[x][y] = 'O'
 
+        system('clear')
         matriz_creador(matriz) 
         matrizPlana = [x for i in matriz for x in i]
 
@@ -107,8 +115,7 @@ def dinamica():
             print('{} has ganado el juego!'.format(jugador2.nombre))
             break
         else:
-            print('No hay ganador todavia, el juego continua')
-
+            print('No hay ganador todavia, el juego continua') 
 
 
 juego()
